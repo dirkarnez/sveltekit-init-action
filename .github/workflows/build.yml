@@ -33,7 +33,7 @@ jobs:
       
     - working-directory: ${{ env.app-name }}
       run: |
-        cat <<EOF > .gitignore
+        cat <<EOF > ".gitignore"
         node_modules
         EOF
         
