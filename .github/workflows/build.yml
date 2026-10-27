@@ -29,6 +29,9 @@ jobs:
     - run: npx sv create ${{ env.app-name }} --template minimal --types ts --add tailwindcss="plugins:typography,forms" --install npm
 
     - working-directory: ${{ env.app-name }}
+      run: rm -rf node_modules
+      
+    - working-directory: ${{ env.app-name }}
       run: |
         cat <<EOF > .gitignore
         node_modules
