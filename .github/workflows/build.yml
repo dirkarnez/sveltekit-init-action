@@ -27,7 +27,13 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - run: npx sv create ${{ env.app-name }} --template minimal --types ts --add tailwindcss="plugins:typography,forms" --install npm
-    
+
+    - working-directory: ${{ env.app-name }}
+      run: |
+        cat <<EOF > .gitignore
+        node_modules
+        EOF
+        
     - run: ls -R
     
     - uses: actions/upload-artifact@v7.0.2
