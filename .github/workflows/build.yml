@@ -27,8 +27,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - run: npx sv create ${{ env.app-name }} --template minimal --types ts --no-install
+
+    - run: ls -R
     
-    - uses: actions/upload-artifact@v4.6.0
+    - uses: actions/upload-artifact@v7.0.2
       with:
         name: "${{ env.app-name }}-node-v${{ matrix.node-version }}"
         path: "${{ env.app-name }}"
