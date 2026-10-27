@@ -43,3 +43,4 @@ jobs:
       with:
         name: "${{ env.app-name }}-node-v${{ matrix.node-version }}"
         path: "${{ env.app-name }}"
+        include-hidden-files: true
